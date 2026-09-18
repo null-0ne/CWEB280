@@ -1,0 +1,9 @@
+<h2>Upload a File</h2>
+<!-- SUPER SUPER IMPORTANT - must specify 
+enctype="multipart/form-data to upload file -->
+<form action="/upload" method="post" enctype="multipart/form-data">
+  <!-- SUPER SUPER IMPORTANT - specify name attribute
+otherwise, it's not sent to the server -->
+  <input type="file" name="myFile" />
+  <button type="submit">Upload</button>
+</form>
