@@ -1,0 +1,44 @@
+<h1>{{title}}</h1>
+
+{{#if errors.length}}
+  <div class="error">
+    <ul>
+      {{#each errors}}
+        <li>{{this.msg}}</li>
+      {{/each}}
+    </ul>
+  </div>
+{{/if}}
+
+<!-- TODO: use #if to only show either the register form
+ or the login form (not both at the same time) -->
+
+<form action="/register" method="POST">
+    <label>Email</label>
+    <input type="email" name="email" value="{{oldInput.email}}" />
+
+    <label>Password</label>
+    <input type="password" name="password" value="{{oldInput.password}}" />
+
+    <label>Birthdate</label>
+    <input type="date" name="birthDate" value="{{oldInput.birthDate}}" />
+
+    <label>Display Name:</label>
+    <input type="text" name="displayName" value="{{oldInput.displayName}}" />
+
+    <button type="submit">Register</button>
+</form>
+<p>Already have an account? <a href="/login">Login</a></p>
+
+
+
+<form action="/login" method="POST">
+    <label>Email</label>
+    <input type="email" name="email" value="{{oldInput.email}}" placeholder="admin@test.ca" required />
+
+    <label>Password</label>
+    <input type="password" name="password" value="{{oldInput.password}}" placeholder="12345Pwd" required />
+
+    <button type="submit">Login</button>
+</form>
+<p>Need an account? <a href="/register">Register</a></p>

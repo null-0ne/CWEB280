@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="/app.css" />
+</head>
+<body>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/image-list">Image List</a>
+    {{#if currentUser}}
+      <a href="/upload">Upload</a>
+      <a href="/logout">Logout</a>
+      <span> Welcome, {{currentUser.displayName}}! </span>
+    {{else}}
+      <a href="/login">Login</a>
+    {{/if}}
+  </nav>
+
+  <div class="container">
+    {{{body}}}
+  </div>
+</body>
+</html>

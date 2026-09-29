@@ -1,0 +1,18 @@
+<h1>{{title}}</h1>
+
+{{#if error}}
+  <p class="error">{{error}}</p>
+{{/if}}
+
+{{#if success}}
+  <p class="success">File uploaded successfully: {{uploadedFile}}</p>
+  <!-- TODO: upload-form.handlebarsdisplay the uploaded file below in an image tag -->
+
+{{/if}}
+
+<!-- TODO: Set the enctype -->
+<form action="/upload" method="POST">
+  <label>Select image</label>
+  <input type="file" name="myFile" required />
+  <button type="submit">Upload</button>
+</form>

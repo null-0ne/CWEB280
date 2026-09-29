@@ -1,0 +1,69 @@
+   <div class="container">
+    <h1>{{title}}</h1>
+
+  <form action="/image-list" method="GET">
+  <!-- TODO: use oldInputs to set the search value-->
+    <input type="search" name="search" placeholder="Search images..." value="{{search}}" />
+  <!-- TODO: use oldInputs to set which option is "selected" hint use "#if eq" helper function --> 
+    <select name="sort">
+          <option value="name" selected>Sort By Name</option>
+          <option value="size" >Sort By Size</option>
+          <option value="date" >Sort By Date</option>
+    </select>
+    <button type="submit">Sort</button>
+  </form>
+
+ <!--- TODO image-list.handlebars: currently contains hard coded html to use HandleBars #each instead --->
+ <!--- TODO image-list.handlebars: use handlbars helper function to format the size WHICH IS IN BYTES to display in Megabytes --->
+ <!--- TODO image-list.handlebars: use handlbars helper function to display the date in en-CA short date and short time format --->
+    {{#each imageFiles}}
+      <div class="card">
+        <span>
+          <h3>{{this.originalName}}</h3>
+          <p>Type:  {{this.mimeType}}</p>
+          <p>Size: {{formatSizeMb this.size}} MB </p>
+          <p>Uploaded by: {{this.uploadedBy}}</p>
+          <p>Date: {{formatShortDate this.uploadedAt}}</p>
+        </span>
+        <span>
+          <img src="/images/{{this.fileName}}" alt="dev-circle.webp" style="width: auto; max-height: 10em;" />
+        </span>
+      </div>
+    {{/each}}
+    {{!-- <div class="card">
+      <span>
+        <h3>dev-circle.webp</h3>
+        <p>Type: image/webp</p>
+        <p>Size: 1.3 MB</p>
+        <p>Uploaded by: Admin User</p>
+        <p>Date: 2026-09-14, 4:09 p.m.</p>
+      </span>
+      <span>
+        <img src="/images/1789402144962-dev-circle.webp" alt="dev-circle.webp" style="width: auto; max-height: 10em;" />
+      </span>
+    </div>
+    <div class="card">
+      <span>
+        <h3>dev-coulds.jpg</h3>
+        <p>Type: image/jpeg</p>
+        <p>Size: 0.1 MB</p>
+        <p>Uploaded by: Admin User</p>
+        <p>Date: 2026-09-13, 5:55 p.m.</p>
+      </span>
+      <span>
+        <img src="/images/1789322144961-dev-clouds.jpg" alt="dev-coulds.jpg" style="width: auto; max-height: 10em;" />
+      </span>
+    </div>
+    <div class="card">
+      <span>
+        <h3>dev-robot.webp</h3>
+        <p>Type: image/webp</p>
+        <p>Size: 1.3 MB</p>
+        <p>Uploaded by: Admin User</p>
+        <p>Date: 2026-09-15, 2:22 p.m.</p>
+      </span>
+      <span>
+        <img src="/images/1789482123963-dev-robot.webp" alt="dev-robot.webp" style="width: auto; max-height: 10em;" />
+      </span>
+    </div> --}}
+  </div>

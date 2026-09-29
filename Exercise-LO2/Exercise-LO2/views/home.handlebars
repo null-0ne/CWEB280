@@ -1,0 +1,16 @@
+<h1>{{title}}</h1>
+<p>Exercise LO2</p>
+
+<div class="card">
+  <h2>Welcome</h2>
+  <p>This app uses Handlebars as the view engine for all pages.</p>
+</div>
+
+<div class="card">
+  <h3>Team Members</h3>
+  <ul>
+    {{#each students}}
+      <li>{{this}}</li>
+    {{/each}}
+  </ul>
+</div>
