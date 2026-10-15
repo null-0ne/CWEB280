@@ -1,0 +1,19 @@
+{
+  "name": "3.6-typeorm-api-validate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1",
+    "joi": "^18.2.9",
+    "mysql2": "^3.24.5",
+    "typeorm": "^1.1.2"
+  }
+}

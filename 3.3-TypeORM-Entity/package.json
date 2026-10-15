@@ -1,0 +1,19 @@
+{
+  "name": "3.3-typeorm-entity",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1",
+    "mysql2": "^3.24.5",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^1.1.1"
+  }
+}
